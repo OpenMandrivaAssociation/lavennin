@@ -13,6 +13,7 @@ Group:		Sound
 URL:		http://phon.joensuu.fi/suopuhe/
 Source:		http://www.ling.helsinki.fi/suopuhe/download/%name-%version.tar.bz2
 Patch0:		lavennin-paths.patch
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
 # per Mandriva locale-specific package policy:
 Requires:	locales-fi
