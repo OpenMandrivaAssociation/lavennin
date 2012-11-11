@@ -1,0 +1,36 @@
+diff -Nur -x '*~' lavennin/bin/lavennin lavennin-fix/bin/lavennin
+--- lavennin/bin/lavennin	2004-10-22 14:30:18.000000000 +0300
++++ lavennin-fix/bin/lavennin	2006-08-05 21:00:14.000000000 +0300
+@@ -164,8 +164,12 @@
+     $HOME = get_home_directory();
+ }
+ 
+-my $DATA_DIR = $HOME . "/data";
++my $DATA_DIR = @LAVENNINDATADIR@;
+ 
++unless ( -e "$HOME" || $www ) {
++  if ( $verbose ) { print STDERR "$HOME does not exist! Creating it!\n"; }
++  unless ( mkdir "$HOME", 0777 ) { die"$HOME, $!"; }
++}
+ 
+ # making the TMP dir...
+ unless ( -e "$HOME/tmp" || $www ) {
+@@ -1260,17 +1264,7 @@
+ 
+     my $HOME;
+ 
+-    # absolute path (unix)
+-    if ( $0 =~ /^\// ) { $HOME = $0; }
+-    # relative path: combine working directory (and path) and program name
+-    elsif ( $0 =~ /^\.\// ) { # ./ohjelma
+-	$HOME = cwd() . "/" . $'; #'
+-    } 
+-    # working directory
+-    else { $HOME = cwd() . "/" . $0; }
+-
+-
+-    $HOME =~ s/\/bin\/[^\/]+$//;
++    $HOME = $ENV{TMP} . "/lavennin";
+     
+     if ( $verbose ) { print STDERR "Program directory: $HOME\n"; }
+     return $HOME;
