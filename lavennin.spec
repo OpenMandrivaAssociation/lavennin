@@ -48,3 +48,30 @@ rm -rf %{buildroot}
 %doc man/*.shtml
 %{_bindir}/lavennin
 %{_datadir}/%{name}
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 20041119-4mdv2011.0
++ Revision: 620054
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 20041119-3mdv2010.0
++ Revision: 429702
+- rebuild
+
+* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 20041119-2mdv2008.1
++ Revision: 136535
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Sat Sep 01 2007 Anssi Hannula <anssi@mandriva.org> 20041119-2mdv2008.0
++ Revision: 77449
+- rebuild
+- Import lavennin
+
+
+
+* Sat Aug  5 2006 Anssi Hannula <anssi@mandriva.org> 20041119-1mdv2007.0
+- initial Mandriva release
