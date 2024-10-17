@@ -10,7 +10,7 @@ Version:	%version
 Release:	%release
 License:	LGPL
 Group:		Sound
-URL:		http://phon.joensuu.fi/suopuhe/
+URL:		https://phon.joensuu.fi/suopuhe/
 Source:		http://www.ling.helsinki.fi/suopuhe/download/%name-%version.tar.bz2
 Patch0:		lavennin-paths.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
