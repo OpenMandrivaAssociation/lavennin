@@ -2,7 +2,7 @@
 %define name	lavennin
 %define version	20041119
 %define rel	4
-%define release	%mkrel %rel
+%define release %rel.1
 
 Summary:	Converts written Finnish text to a readable form
 Name:		%name
